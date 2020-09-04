@@ -6,7 +6,7 @@ namespace ShopMoneyAPI;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
-use CoinAPI\CoinAPI;
+use EconomyAPI\EconomyAPI;
 
 class ShopMoneyAPI extends PluginBase
 {
@@ -30,39 +30,30 @@ class ShopMoneyAPI extends PluginBase
   }
   public function getMoney ($player)
   {
-    return CoinAPI::getInstance ()->SeeCoin ($player);
+    return EconomyAPI::getInstance ()->myMoney ( $player );
     /*
     return PluginName::getInstance ()->getMoney ($player);
     */
   }
   public function setMoney ($player, $money)
   {
-    return CoinAPI::getInstance ()->SetCoin ($player);
+    EconomyAPI::getInstance ()->setMoney ($player, $money);
     /*
-    OP Command API
-    */
-    /*
-    return PluginName::getInstance ()->setMoney ($player,$money);
+    PluginName::getInstance ()->setMoney ($player,$money);
     */
   }
   public function addMoney ($player, $money)
   {
-    return CoinAPI::getInstance ()->AddCoin ($player);
+    EconomyAPI::getInstance ()->addMoney ($player, $money);
     /*
-    OP Command API
-    */
-    /*
-    return PluginName::getInstance ()->addMoney ($player,$money);
+    PluginName::getInstance ()->addMoney ($player,$money);
     */
   }
   public function sellMoney ($player, $money)
   {
-    return CoinAPI::getInstance ()->SeeCoin ($player);
+    return EconomyAPI::getInstance ()->reduceMoney ($player, $money);
     /*
-    OP Command API
-    */
-    /*
-    return PluginName::getInstance ()->sellMoney ($player,$money);
+    PluginName::getInstance ()->sellMoney ($player,$money);
     */
   }
 }
