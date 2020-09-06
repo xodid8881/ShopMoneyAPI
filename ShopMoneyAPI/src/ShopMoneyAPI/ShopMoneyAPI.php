@@ -6,7 +6,7 @@ namespace ShopMoneyAPI;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
-use EconomyAPI\EconomyAPI;
+use onebone\economyapi\EconomyAPI;
 
 class ShopMoneyAPI extends PluginBase
 {
